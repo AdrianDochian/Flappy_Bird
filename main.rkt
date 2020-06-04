@@ -250,14 +250,13 @@
 ; ground -> ground-y si ground-height, acesta va acoperi intreaga latime a ecranului
 ; scor -> text-x si text-y
 ; pipes -> pipe-width si pipe-height
+
 (define bird-image (rectangle bird-width bird-height  "solid" "yellow"))
 (define ground-image (rectangle scene-width ground-height "solid" "brown"))
 (define initial-scene (rectangle scene-width scene-height "solid" "white"))
-
 (define pipe-image (rectangle pipe-width pipe-height "solid" "green"))
-;(define initial-scene (empty-scene scene-width scene-height))
-
 (define text-family (list "Gill Sans" 'swiss 'normal 'bold #f))
+
 (define (score-to-image x)
 (if SHOW_SCORE
 	(apply text/font (~v (round x)) 24 "indigo" text-family)
@@ -271,6 +270,7 @@
                               [place-pipes pipes initial-scene] )))))
   
 ; Folosind `place-image/place-images` va poziționa pipe-urile pe scenă.
+
 (define (place-pipes pipes scene)
   (if (null? pipes)
       scene
