@@ -1,0 +1,5 @@
+# install racket first
+	sudo apt-get install racket
+
+# run the game
+	racket main.rkt
